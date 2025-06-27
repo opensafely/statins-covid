@@ -1,5 +1,7 @@
-opensafely/ethnicity-snomed-0removed/2e641f61
+# ethnicity (for diabetes-algo)
+opensafely/ethnicity-snomed-0removed/22911876
 
+# DM (for diabetes-algo)
 user/hjforbes/type-1-diabetes/674fbd7a
 user/hjforbes/type-2-diabetes/3530d710
 user/hjforbes/other-or-nonspecific-diabetes/0311f0a6
@@ -12,3 +14,8 @@ opensafely/glycated-haemoglobin-hba1c-tests-numerical-value/5134e926
 opensafely/insulin-medication/2020-04-26
 opensafely/antidiabetic-drugs/2020-07-16
 user/r_denholm/non-metformin-antidiabetic-drugs_bristol/7207eb58
+
+# CVD (statins for secondary prevention)
+nhsd-primary-care-domain-refsets/chd_cod/0f32f87c
+nhsd-primary-care-domain-refsets/ostr_cod/6a91d1df
+nhsd-primary-care-domain-refsets/pad_cod/07d8032c

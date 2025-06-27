@@ -6,14 +6,16 @@ from ehrql import codelist_from_csv
 #######################################################################################
 # CODELISTS
 #######################################################################################
+
+## Ethnicity (for diabetes-algo)
 ethnicity_codes = codelist_from_csv(
     "codelists/opensafely-ethnicity-snomed-0removed.csv",  # there is a newer version, but it does not have column snomed so would have to update this
-    column="snomedcode",
+    column="code",
     category_column="Grouping_6",
 )
 
 
-## DIABETES
+## DIABETES (for diabetes-algo)
 # T1DM
 diabetes_type1_ctv3_clinical = codelist_from_csv("codelists/user-hjforbes-type-1-diabetes.csv",column="code")
 # T2DM
@@ -35,3 +37,11 @@ hba1c_snomed = codelist_from_csv("codelists/opensafely-glycated-haemoglobin-hba1
 insulin_dmd = codelist_from_csv("codelists/opensafely-insulin-medication.csv",column="id")
 antidiabetic_drugs_snomed_clinical = codelist_from_csv("codelists/opensafely-antidiabetic-drugs.csv",column="id")
 non_metformin_dmd = codelist_from_csv("codelists/user-r_denholm-non-metformin-antidiabetic-drugs_bristol.csv",column="id")
+
+
+## CVD
+cvd_chd = codelist_from_csv("codelists/nhsd-primary-care-domain-refsets-chd_cod.csv",column="code")
+cvd_nonhaemorrhagic_stroke = codelist_from_csv("codelists/nhsd-primary-care-domain-refsets-ostr_cod.csv",column="code")
+cvd_pad = codelist_from_csv("codelists/nhsd-primary-care-domain-refsets-pad_cod.csv",column="code")
+
+
