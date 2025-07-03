@@ -40,10 +40,10 @@ actions:
         csv.gz: output/data_processed_dm_algo.csv.gz
 
   generate_dataset:
-    run: ehrql:v1 generate-dataset analysis/dataset_definition.py --output output/dataset.csv.gz
+    run: ehrql:v1 generate-dataset analysis/dataset_definition.py --output output/dataset.arrow
     needs:
     - generate_dataset_dm_algo
     - diabetes_algo
     outputs:
       highly_sensitive:
-        dataset: output/dataset.csv.gz
+        dataset: output/dataset.arrow

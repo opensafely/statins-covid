@@ -40,8 +40,20 @@ non_metformin_dmd = codelist_from_csv("codelists/user-r_denholm-non-metformin-an
 
 
 ## CVD
-cvd_chd = codelist_from_csv("codelists/nhsd-primary-care-domain-refsets-chd_cod.csv",column="code")
-cvd_nonhaemorrhagic_stroke = codelist_from_csv("codelists/nhsd-primary-care-domain-refsets-ostr_cod.csv",column="code")
-cvd_pad = codelist_from_csv("codelists/nhsd-primary-care-domain-refsets-pad_cod.csv",column="code")
+cvd_chd_snomed = codelist_from_csv("codelists/nhsd-primary-care-domain-refsets-chd_cod.csv",column="code")
+cvd_chd_icd10 = codelist_from_csv("codelists/user-alainamstutz-coronary-heart-disease-secondary-care.csv",column="code")
+
+cvd_angina_snomed = codelist_from_csv("codelists/nhsd-primary-care-domain-refsets-chd_cod.csv",column="code")
+cvd_angina_icd10 = codelist_from_csv("codelists/user-RochelleKnight-angina_icd10.csv",column="code")
+
+cvd_ami_snomed = codelist_from_csv("codelists/nhsd-primary-care-domain-refsets-mi_cod.csv",column="code")
+cvd_ami_icd10 = codelist_from_csv("codelists/user-RochelleKnight-ami_icd10.csv",column="code")
+cvd_ami_prior_icd10 = codelist_from_csv("codelists/user-elsie_horne-ami_prior_icd10.csv",column="code")
+
+cvd_nonhaemorrhagic_stroke_snomed = codelist_from_csv("codelists/nhsd-primary-care-domain-refsets-ostr_cod.csv",column="code")
+cvd_nonhaemorrhagic_stroke_icd10 = codelist_from_csv("codelists/user-RochelleKnight-stroke_isch_icd10.csv",column="code")
+
+cvd_pad_snomed = codelist_from_csv("codelists/nhsd-primary-care-domain-refsets-pad_cod.csv",column="code")
+#cvd_pad_icd10 = 
 
 
