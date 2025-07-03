@@ -84,11 +84,53 @@
       "downloaded_at": "2025-06-27 09:38:44.734744Z",
       "sha": "7b47b2cb6c00a2fc71ad9dfb1030bd6b08418535"
     },
+    "user-alainamstutz-coronary-heart-disease-secondary-care.csv": {
+      "id": "user/alainamstutz/coronary-heart-disease-secondary-care/308a43eb",
+      "url": "https://www.opencodelists.org/codelist/user/alainamstutz/coronary-heart-disease-secondary-care/308a43eb/",
+      "downloaded_at": "2025-07-03 17:54:02.248768Z",
+      "sha": "88e53aa814e8bf62c3db5c26873f497281477df9"
+    },
+    "nhsd-primary-care-domain-refsets-angina_cod.csv": {
+      "id": "nhsd-primary-care-domain-refsets/angina_cod/3d11b7d2",
+      "url": "https://www.opencodelists.org/codelist/nhsd-primary-care-domain-refsets/angina_cod/3d11b7d2/",
+      "downloaded_at": "2025-07-03 17:54:02.388734Z",
+      "sha": "8fe54f8fe10bb6bd359f386a86c41848ea3f75e5"
+    },
+    "user-RochelleKnight-angina_icd10.csv": {
+      "id": "user/RochelleKnight/angina_icd10/756e8ce3",
+      "url": "https://www.opencodelists.org/codelist/user/RochelleKnight/angina_icd10/756e8ce3/",
+      "downloaded_at": "2025-07-03 17:54:02.510197Z",
+      "sha": "ac68628572a80c270f36bc9c2744e83c1cb2f3a6"
+    },
+    "nhsd-primary-care-domain-refsets-mi_cod.csv": {
+      "id": "nhsd-primary-care-domain-refsets/mi_cod/0f298f7f",
+      "url": "https://www.opencodelists.org/codelist/nhsd-primary-care-domain-refsets/mi_cod/0f298f7f/",
+      "downloaded_at": "2025-07-03 17:54:02.653522Z",
+      "sha": "032c31381c68f95a3261c3ff7f0b55dd01f4ce66"
+    },
+    "user-elsie_horne-ami_prior_icd10.csv": {
+      "id": "user/elsie_horne/ami_prior_icd10/360a5c99",
+      "url": "https://www.opencodelists.org/codelist/user/elsie_horne/ami_prior_icd10/360a5c99/",
+      "downloaded_at": "2025-07-03 17:54:02.799783Z",
+      "sha": "7ca20f7f5d9db9133b839a1c4edb297c64046997"
+    },
+    "user-RochelleKnight-ami_icd10.csv": {
+      "id": "user/RochelleKnight/ami_icd10/3dea268d",
+      "url": "https://www.opencodelists.org/codelist/user/RochelleKnight/ami_icd10/3dea268d/",
+      "downloaded_at": "2025-07-03 17:54:02.969243Z",
+      "sha": "5152287e39c99ceed1fee19ac5a742b66f2bb3de"
+    },
     "nhsd-primary-care-domain-refsets-ostr_cod.csv": {
       "id": "nhsd-primary-care-domain-refsets/ostr_cod/6a91d1df",
       "url": "https://www.opencodelists.org/codelist/nhsd-primary-care-domain-refsets/ostr_cod/6a91d1df/",
       "downloaded_at": "2025-06-27 09:38:44.832307Z",
       "sha": "1a6409d5a7afb4dfcfd40cae7d5902463a11d6b3"
+    },
+    "user-RochelleKnight-stroke_isch_icd10.csv": {
+      "id": "user/RochelleKnight/stroke_isch_icd10/278d734e",
+      "url": "https://www.opencodelists.org/codelist/user/RochelleKnight/stroke_isch_icd10/278d734e/",
+      "downloaded_at": "2025-07-03 17:54:03.284125Z",
+      "sha": "a4564a582dabdb385a2caf6bb6a24e4bfcaf92dc"
     },
     "nhsd-primary-care-domain-refsets-pad_cod.csv": {
       "id": "nhsd-primary-care-domain-refsets/pad_cod/07d8032c",

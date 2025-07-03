@@ -17,5 +17,16 @@ user/r_denholm/non-metformin-antidiabetic-drugs_bristol/7207eb58
 
 # CVD (statins for secondary prevention)
 nhsd-primary-care-domain-refsets/chd_cod/0f32f87c
+user/alainamstutz/coronary-heart-disease-secondary-care/308a43eb
+
+nhsd-primary-care-domain-refsets/angina_cod/3d11b7d2
+user/RochelleKnight/angina_icd10/756e8ce3
+
+nhsd-primary-care-domain-refsets/mi_cod/0f298f7f
+user/elsie_horne/ami_prior_icd10/360a5c99
+user/RochelleKnight/ami_icd10/3dea268d
+
 nhsd-primary-care-domain-refsets/ostr_cod/6a91d1df
+user/RochelleKnight/stroke_isch_icd10/278d734e
+
 nhsd-primary-care-domain-refsets/pad_cod/07d8032c
