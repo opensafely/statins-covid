@@ -27,6 +27,9 @@ from codelists import *
 ## for import of diabetes algo created data
 from datetime import date
 
+## variable helper functions 
+from variable_helper_functions import *
+
 ## import diabetes algo created data
 @table_from_file("output/data_processed_dm_algo.csv.gz")
 class data_processed_dm_algo(PatientFrame):
@@ -57,7 +60,7 @@ class data_processed_dm_algo(PatientFrame):
 
 
 ## index date
-index_date = "2015-02-01"
+index_date = "2015-02-01" # let's see then how this works for the Measures table
 
 
 ## general criteria
@@ -67,7 +70,7 @@ is_registered = practice_registrations.for_patient_on(
     index_date
 ).exists_for_patient()
 
-aged_over_40 = patients.age_on(index_date) >= 40
+aged_over_40 = patients.age_on(index_date) >= 40 # combine with T1DM ?
 
 # pregnancy
 
@@ -84,31 +87,63 @@ dm_type1 = (
 # ckd = ...
 
 ## secondary prevention
-cvd_events = (
-    clinical_events
-    .where(clinical_events.date < index_date)
-    .where(
-        (clinical_events.snomedct_code.is_in(cvd_chd) | 
-         clinical_events.snomedct_code.is_in(cvd_nonhaemorrhagic_stroke) | 
-         clinical_events.snomedct_code.is_in(cvd_pad))
-    )
-    )
+elig_bin_chd = (
+    last_matching_event_clinical_snomed_before(cvd_chd_snomed, index_date).exists_for_patient() | # primary care
+    last_matching_event_apc_before(cvd_chd_icd10, index_date).exists_for_patient() # secondary care
+) # not sure we need dates for eligibility criteria with "any history of"
 
-cvd_events_first = (
-    cvd_events
-    .sort_by(cvd_events.date)
-    .first_for_patient()
-)
+elig_bin_angina = (
+    last_matching_event_clinical_snomed_before(cvd_angina_snomed, index_date).exists_for_patient() | # primary care
+    last_matching_event_apc_before(cvd_angina_icd10, index_date).exists_for_patient() # secondary care
+) 
 
-cvd_established = (
-    cvd_events_first
-    .exists_for_patient()
-)
+elig_bin_ami = (
+    last_matching_event_clinical_snomed_before(cvd_ami_snomed, index_date).exists_for_patient() | # primary care
+    last_matching_event_apc_before(cvd_ami_icd10 + cvd_ami_prior_icd10, index_date).exists_for_patient() # secondary care
+) 
+
+elig_bin_stroke_nonhaemo = (
+    last_matching_event_clinical_snomed_before(cvd_nonhaemorrhagic_stroke_snomed, index_date).exists_for_patient() | # primary care
+    last_matching_event_apc_before(cvd_nonhaemorrhagic_stroke_icd10, index_date).exists_for_patient() # secondary care
+) 
+
+elig_bin_pad = (
+    last_matching_event_clinical_snomed_before(cvd_pad_snomed, index_date).exists_for_patient() 
+    # |
+    # last_matching_event_apc_before(cvd_pad_icd10, index_date).exists_for_patient()
+) 
+
+
+
+
+
+# cvd_events = (
+#     clinical_events
+#     .where(clinical_events.date < index_date)
+#     .where(
+#         (clinical_events.snomedct_code.is_in(cvd_chd) | 
+#          clinical_events.snomedct_code.is_in(cvd_nonhaemorrhagic_stroke) | 
+#          clinical_events.snomedct_code.is_in(cvd_pad))
+#     )
+#     )
+
+# cvd_events_first = (
+#     cvd_events
+#     .sort_by(cvd_events.date)
+#     .first_for_patient()
+# )
+
+# cvd_established = (
+#     cvd_events_first
+#     .exists_for_patient()
+# )
 
 ## combined criteria
 general_elig = (is_alive & is_registered & aged_over_40)   # TODO: & not_pregnant & no_statin_ar
 statin_elig_primary = (aged_over_85 | dm_type1)            # TODO: | cvd_risk_high | ckd
-statin_elig_secondary = cvd_established
+# statin_elig_secondary = cvd_established
+
+statin_elig_secondary = elig_bin_chd | elig_bin_angina | elig_bin_ami | elig_bin_stroke_nonhaemo | elig_bin_pad
 
 is_elig = (general_elig &
                (statin_elig_primary | statin_elig_secondary)
@@ -124,12 +159,16 @@ dataset = create_dataset()
 dataset.configure_dummy_data(population_size=1000)
 dataset.define_population(is_elig)
 
-dataset.sex = patients.sex
-dataset.age = patients.age_on(index_date)
-dataset.cat_diabetes = data_processed_dm_algo.cat_diabetes
-dataset.t1dm_date = data_processed_dm_algo.t1dm_date
-dataset.cvd = cvd_established
-
+dataset.cov_cat_sex = patients.sex
+dataset.cov_num_age = patients.age_on(index_date)
+dataset.elig_cat_dm = data_processed_dm_algo.cat_diabetes
+dataset.elig_date_t1dm = data_processed_dm_algo.t1dm_date
+# dataset.cvd = cvd_established # I think it will be important to know who has which CVD condition -> elig_bin_chd, etc.
+dataset.elig_bin_chd = elig_bin_chd
+dataset.elig_bin_angina = elig_bin_angina
+dataset.elig_bin_ami = elig_bin_ami
+dataset.elig_bin_stroke_nonhaemo = elig_bin_stroke_nonhaemo
+dataset.elig_bin_pad = elig_bin_pad
 
 show(dataset)
 
