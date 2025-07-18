@@ -82,14 +82,14 @@ dm_type1 = (
 # ckd = ...
 
 # Extract latest maximum QRISK value, measured in past 5 years, from event_clinical_ranges table
-elig_qrisk_value = (
+elig_num_qrisk = (
   clinical_events_ranges.where(
     clinical_events_ranges.snomedct_code.is_in(qrisk_snomed))
     .where(clinical_events_ranges.date.is_on_or_between(INTERVAL.start_date - months(60), INTERVAL.start_date))
     .numeric_value.maximum_for_patient()
 )
 # Extract its associated comparator (if there is any)
-elig_qrisk_value_comparator = ( 
+elig_str_qrisk_comparator = ( 
   clinical_events_ranges.where(
     clinical_events_ranges.snomedct_code.is_in(qrisk_snomed))
     .where(clinical_events_ranges.date.is_on_or_between(INTERVAL.start_date - months(60), INTERVAL.start_date))
@@ -192,8 +192,8 @@ exp_date_statin_first = first_matching_med_dmd_between(statins_dmd, INTERVAL.sta
 # dataset.elig_bin_stroke_nonhaemo = elig_bin_stroke_nonhaemo
 # dataset.elig_bin_pad = elig_bin_pad
 
-# dataset.elig_qrisk_value = elig_qrisk_value
-# dataset.elig_qrisk_value_comparator = elig_qrisk_value_comparator
+# dataset.elig_num_qrisk = elig_num_qrisk
+# dataset.elig_str_qrisk_comparator = elig_str_qrisk_comparator
 
 # show(dataset)
 
