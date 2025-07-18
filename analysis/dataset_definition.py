@@ -93,7 +93,7 @@ elig_str_qrisk_comparator = (
   clinical_events_ranges.where(
     clinical_events_ranges.snomedct_code.is_in(qrisk_snomed))
     .where(clinical_events_ranges.date.is_on_or_between(INTERVAL.start_date - months(60), INTERVAL.start_date))
-    .where(clinical_events_ranges.numeric_value == elig_qrisk_value)
+    .where(clinical_events_ranges.numeric_value == elig_num_qrisk)
     .sort_by(clinical_events_ranges.date)
     .last_for_patient()
     .comparator
