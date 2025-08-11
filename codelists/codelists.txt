@@ -30,3 +30,7 @@ nhsd-primary-care-domain-refsets/ostr_cod/6a91d1df
 user/RochelleKnight/stroke_isch_icd10/278d734e
 
 nhsd-primary-care-domain-refsets/pad_cod/07d8032c
+
+nhsd-primary-care-domain-refsets/qriskscore_cod/16393ce7
+
+opensafely/statin-medication/2bf2b2ef

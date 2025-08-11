@@ -57,3 +57,11 @@ cvd_pad_snomed = codelist_from_csv("codelists/nhsd-primary-care-domain-refsets-p
 #cvd_pad_icd10 = 
 
 
+# QRISK - but I think there are more codes than these 4, need to work on this!
+qrisk_snomed = codelist_from_csv("codelists/nhsd-primary-care-domain-refsets-qriskscore_cod.csv",column="code")
+
+
+# Statins - but need to double-check this codelist! 
+statins_dmd = codelist_from_csv("codelists/opensafely-statin-medication.csv",column="code")
+
+

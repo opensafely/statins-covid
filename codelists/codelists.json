@@ -137,6 +137,18 @@
       "url": "https://www.opencodelists.org/codelist/nhsd-primary-care-domain-refsets/pad_cod/07d8032c/",
       "downloaded_at": "2025-06-27 09:38:44.947573Z",
       "sha": "f3a33d8792fcd458f728b4dbaed103e5cead9a0c"
+    },
+    "nhsd-primary-care-domain-refsets-qriskscore_cod.csv": {
+      "id": "nhsd-primary-care-domain-refsets/qriskscore_cod/16393ce7",
+      "url": "https://www.opencodelists.org/codelist/nhsd-primary-care-domain-refsets/qriskscore_cod/16393ce7/",
+      "downloaded_at": "2025-07-18 08:14:34.955742Z",
+      "sha": "1aeeb9585dbe172f387c1f41ea7b59f0ca09cb4c"
+    },
+    "opensafely-statin-medication.csv": {
+      "id": "opensafely/statin-medication/2bf2b2ef",
+      "url": "https://www.opencodelists.org/codelist/opensafely/statin-medication/2bf2b2ef/",
+      "downloaded_at": "2025-07-18 09:01:21.542018Z",
+      "sha": "5451bfb2040bf2b589f2a59c1ebd61e2670f558b"
     }
   }
 }
