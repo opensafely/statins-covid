@@ -1,5 +1,13 @@
-# ethnicity (for diabetes-algo)
+#######################################################################################
+# ethnicity (for diabetes-algo and other)
+#######################################################################################
+
 opensafely/ethnicity-snomed-0removed/22911876
+
+
+#######################################################################################
+# diabetes-algo
+#######################################################################################
 
 # DM (for diabetes-algo)
 user/hjforbes/type-1-diabetes/674fbd7a
@@ -34,3 +42,66 @@ nhsd-primary-care-domain-refsets/pad_cod/07d8032c
 nhsd-primary-care-domain-refsets/qriskscore_cod/16393ce7
 
 opensafely/statin-medication/2bf2b2ef
+
+
+
+
+#######################################################################################
+# PRIMIS (see https://github.com/opensafely/reusable-variables)
+#######################################################################################
+
+#Asthma
+primis-covid19-vacc-uptake/astadm/v2.5
+primis-covid19-vacc-uptake/ast/v2.5
+primis-covid19-vacc-uptake/astrxm2/v2.5
+primis-covid19-vacc-uptake/astrxm1/v2.5
+
+#Resp
+primis-covid19-vacc-uptake/resp_cov/v2.5
+
+#Chronic heart disease
+primis-covid19-vacc-uptake/chd_cov/v2.5
+
+#Chronic kidney disease
+primis-covid19-vacc-uptake/ckd15/v2.5
+primis-covid19-vacc-uptake/ckd35/v2.5
+primis-covid19-vacc-uptake/ckd_cov/v2.5
+
+#Chronic liver disease
+primis-covid19-vacc-uptake/cld/v2.5
+
+#DBT + addison
+primis-covid19-vacc-uptake/diab/v2.5
+primis-covid19-vacc-uptake/dmres/v2.5
+primis-covid19-vacc-uptake/addis_cod/v2.5
+primis-covid19-vacc-uptake/gdiab_cod/v2.5
+
+#Pregnancy
+primis-covid19-vacc-uptake/preg/v2.5
+primis-covid19-vacc-uptake/pregdel/v2.5
+
+#Severe mental
+primis-covid19-vacc-uptake/smhres/v2.5
+primis-covid19-vacc-uptake/sev_mental/v2.5
+
+#Chronic neurological disease
+primis-covid19-vacc-uptake/cns_cov/v2.5
+
+#Immuno
+primis-covid19-vacc-uptake/immdx_cov/v2.5
+primis-covid19-vacc-uptake/immrx/v2.5
+primis-covid19-vacc-uptake/immunosuppression-admin-codes/v2.5/
+
+#Chemotherapy
+primis-covid19-vacc-uptake/dxt_chemo_cod/v2.5
+
+#Asplenia
+primis-covid19-vacc-uptake/spln_cov/v2.5
+
+#Severe obesity
+primis-covid19-vacc-uptake/bmi/v2.5
+primis-covid19-vacc-uptake/bmi_stage/v2.5
+primis-covid19-vacc-uptake/sev_obesity/v2.5
+
+#Learning disability
+primis-covid19-vacc-uptake/learndis/v2.5
