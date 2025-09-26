@@ -48,11 +48,11 @@ actions:
       highly_sensitive:
         dataset: output/dataset.csv
 
-  generate_measures:
-    run: ehrql:v1 generate-measures analysis/dataset_definition.py --output output/statin_prescr.csv
-    needs:
-    - generate_dataset_dm_algo
-    - diabetes_algo
-    outputs:
-      moderately_sensitive:
-        measure: output/statin_prescr.csv
+  # generate_measures:
+    # run: ehrql:v1 generate-measures analysis/dataset_definition.py --output output/statin_prescr.csv
+    # needs:
+    # - generate_dataset_dm_algo
+    # - diabetes_algo
+    # outputs:
+      # moderately_sensitive:
+        # measure: output/statin_prescr.csv
