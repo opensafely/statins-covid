@@ -22,6 +22,48 @@ opensafely/glycated-haemoglobin-hba1c-tests-numerical-value/5134e926
 opensafely/insulin-medication/2020-04-26
 opensafely/antidiabetic-drugs/2020-07-16
 user/r_denholm/non-metformin-antidiabetic-drugs_bristol/7207eb58
+ 
+
+#######################################################################################
+# quality checks and eligibility
+#######################################################################################
+
+# Pregnancy
+nhsd-primary-care-domain-refsets/preg_cod/53949a6c
+nhsd-primary-care-domain-refsets/c19preg_cod/6793ca01
+
+# Contraceptive pill
+user/elsie_horne/cocp_dmd/1666a7a3
+
+# Hormone replacement therapy
+user/elsie_horne/hrt_dmd/19196799
+
+# Prostate cancer
+user/RochelleKnight/prostate_cancer_snomed/0437497e
+user/RochelleKnight/prostate_cancer_icd10/6b27d648
+
+# Statins contraindicated
+nhsd-primary-care-domain-refsets/lipidtheradv_cod/229b0cda
+nhsd-primary-care-domain-refsets/arstat_cod/21d4594b
+nhsd-primary-care-domain-refsets/aratorvastat_cod/023a0d52
+nhsd-primary-care-domain-refsets/statall_cod/08c4e616
+nhsd-primary-care-domain-refsets/statintol_cod/673e8db5
+nhsd-primary-care-domain-refsets/txstat_cod/0d6d1b70
+nhsd-primary-care-domain-refsets/statin-contraindications-expiring-codes/6a9b3adc
+nhsd-primary-care-domain-refsets/xstat_cod/26d1caf1
+nhsd-primary-care-domain-refsets/statcontr_cod/7b3dbd4a
+nhsd-primary-care-domain-refsets/statnind_cod/1ba825d0
+
+# Palliative care
+nhsd-primary-care-domain-refsets/palcare_cod/4bdaffd3
+
+# Haemorrhagic stroke
+nhsd-primary-care-domain-refsets/hstrk_cod/5d98e6b5
+opensafely/stroke-secondary-care/2b8aa4a9
+
+# Decompensated cirrhosis
+opensafely/condition-advanced-decompensated-cirrhosis-of-the-liver/071038cf
+opensafely/condition-advanced-decompensated-cirrhosis-of-the-liver-and-associated-conditions-icd-10/00e40554
 
 # CVD (statins for secondary prevention)
 nhsd-primary-care-domain-refsets/chd_cod/0f32f87c

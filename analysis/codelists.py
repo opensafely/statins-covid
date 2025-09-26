@@ -7,6 +7,106 @@ from ehrql import codelist_from_csv
 # CODELISTS
 #######################################################################################
 
+## Pregnancy
+preg_cod_snomed = codelist_from_csv(
+    "codelists/nhsd-primary-care-domain-refsets-preg_cod.csv",
+    column="code"
+    )                                
+c19preg_cod_snomed = codelist_from_csv(
+    "codelists/nhsd-primary-care-domain-refsets-c19preg_cod.csv",
+    column="code"
+)
+
+## Contraceptive pill
+cocp_dmd = codelist_from_csv(
+    "codelists/user-elsie_horne-cocp_dmd.csv",
+    column="code"
+    )    
+
+## Hormone replacement therapy
+hrt_dmd = codelist_from_csv(
+    "codelists/user-elsie_horne-hrt_dmd.csv",
+    column="code"
+    )    
+
+## Prostate cancer
+prostate_cancer_snomed_clinical = codelist_from_csv(
+    "codelists/user-RochelleKnight-prostate_cancer_snomed.csv",
+    column="code"
+    )   
+prostate_cancer_icd10 = codelist_from_csv(
+    "codelists/user-RochelleKnight-prostate_cancer_icd10.csv",
+    column="code"
+    )   
+
+## Statins contraindicated
+lipidtheradv_snomed = codelist_from_csv(
+    "codelists/nhsd-primary-care-domain-refsets-lipidtheradv_cod.csv",
+    column="code"
+)
+arstat_snomed = codelist_from_csv(
+    "codelists/nhsd-primary-care-domain-refsets-arstat_cod.csv",
+    column="code"
+)
+aratorvastat_snomed = codelist_from_csv(
+    "codelists/nhsd-primary-care-domain-refsets-aratorvastat_cod.csv",
+    column="code"
+)
+statall_snomed = codelist_from_csv(
+    "codelists/nhsd-primary-care-domain-refsets-statall_cod.csv",
+    column="code"
+)
+statintol_snomed = codelist_from_csv(
+    "codelists/nhsd-primary-care-domain-refsets-statintol_cod.csv",
+    column="code"
+)
+xstat_exp1_snomed = codelist_from_csv(
+    "codelists/nhsd-primary-care-domain-refsets-txstat_cod.csv",
+    column="code"
+)
+xstat_exp2_snomed = codelist_from_csv(
+    "codelists/nhsd-primary-care-domain-refsets-statin-contraindications-expiring-codes.csv",
+    column="code"
+)
+xstat_snomed = codelist_from_csv(
+    "codelists/nhsd-primary-care-domain-refsets-xstat_cod.csv",
+    column="code"
+)
+statcontr_snomed = codelist_from_csv(
+    "codelists/nhsd-primary-care-domain-refsets-statcontr_cod.csv",
+    column="code"
+)
+statnind_snomed = codelist_from_csv(
+    "codelists/nhsd-primary-care-domain-refsets-statnind_cod.csv",
+    column="code"
+)
+
+## Palliative care
+palliat_snomed = codelist_from_csv(
+    "codelists/nhsd-primary-care-domain-refsets-palcare_cod.csv",
+    column="code"
+)
+
+## Haemorrhagic stroke
+hstrk_snomed = codelist_from_csv(
+    "codelists/nhsd-primary-care-domain-refsets-hstrk_cod.csv",
+    column="code"
+)
+hstrk_icd10 = codelist_from_csv(
+    "codelists/opensafely-stroke-secondary-care.csv",
+    column="icd"
+)
+
+## Decompensated cirrhosis
+decomp_liver_cirrh_snomed = codelist_from_csv(
+    "codelists/opensafely-condition-advanced-decompensated-cirrhosis-of-the-liver.csv",
+    column="code"
+)
+decomp_liver_cirrh_icd10 = codelist_from_csv(
+    "codelists/opensafely-condition-advanced-decompensated-cirrhosis-of-the-liver-and-associated-conditions-icd-10.csv",
+    column="code"
+)
+
 ## Ethnicity (for diabetes-algo)
 ethnicity_codes = codelist_from_csv(
     "codelists/opensafely-ethnicity-snomed-0removed.csv",  # there is a newer version, but it does not have column snomed so would have to update this
@@ -57,11 +157,11 @@ cvd_pad_snomed = codelist_from_csv("codelists/nhsd-primary-care-domain-refsets-p
 #cvd_pad_icd10 = 
 
 
-# QRISK - but I think there are more codes than these 4, need to work on this!
+## QRISK - but I think there are more codes than these 4, need to work on this!
 qrisk_snomed = codelist_from_csv("codelists/nhsd-primary-care-domain-refsets-qriskscore_cod.csv",column="code")
 
 
-# Statins - but need to double-check this codelist! 
+## Statins - but need to double-check this codelist! 
 statins_dmd = codelist_from_csv("codelists/opensafely-statin-medication.csv",column="code")
 
 

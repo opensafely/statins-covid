@@ -78,6 +78,132 @@
       "downloaded_at": "2025-06-27 07:32:53.693999Z",
       "sha": "1ac45646e6612579a38b3eff64524c72d150c6f1"
     },
+    "nhsd-primary-care-domain-refsets-preg_cod.csv": {
+      "id": "nhsd-primary-care-domain-refsets/preg_cod/53949a6c",
+      "url": "https://www.opencodelists.org/codelist/nhsd-primary-care-domain-refsets/preg_cod/53949a6c/",
+      "downloaded_at": "2025-09-25 10:43:45.272370Z",
+      "sha": "02970045bcbbe7a890cf81a7fa8b19864491a572"
+    },
+    "nhsd-primary-care-domain-refsets-c19preg_cod.csv": {
+      "id": "nhsd-primary-care-domain-refsets/c19preg_cod/6793ca01",
+      "url": "https://www.opencodelists.org/codelist/nhsd-primary-care-domain-refsets/c19preg_cod/6793ca01/",
+      "downloaded_at": "2025-09-25 10:43:45.365695Z",
+      "sha": "0e4a459ab70ba09b262c9efdedb851ea4e736323"
+    },
+    "user-elsie_horne-cocp_dmd.csv": {
+      "id": "user/elsie_horne/cocp_dmd/1666a7a3",
+      "url": "https://www.opencodelists.org/codelist/user/elsie_horne/cocp_dmd/1666a7a3/",
+      "downloaded_at": "2025-09-26 08:35:07.181720Z",
+      "sha": "ace0cce9a466e05dc0ad302be50275d0121908b2"
+    },
+    "user-elsie_horne-hrt_dmd.csv": {
+      "id": "user/elsie_horne/hrt_dmd/19196799",
+      "url": "https://www.opencodelists.org/codelist/user/elsie_horne/hrt_dmd/19196799/",
+      "downloaded_at": "2025-09-26 08:35:07.286233Z",
+      "sha": "95dde1e61efe8ee6af3358e9640bf139c0c1c9d9"
+    },
+    "user-RochelleKnight-prostate_cancer_snomed.csv": {
+      "id": "user/RochelleKnight/prostate_cancer_snomed/0437497e",
+      "url": "https://www.opencodelists.org/codelist/user/RochelleKnight/prostate_cancer_snomed/0437497e/",
+      "downloaded_at": "2025-09-26 09:41:48.388886Z",
+      "sha": "7249bb62e32d2d60600b0d1e32562f23bd92c6aa"
+    },
+    "user-RochelleKnight-prostate_cancer_icd10.csv": {
+      "id": "user/RochelleKnight/prostate_cancer_icd10/6b27d648",
+      "url": "https://www.opencodelists.org/codelist/user/RochelleKnight/prostate_cancer_icd10/6b27d648/",
+      "downloaded_at": "2025-09-26 09:41:48.479735Z",
+      "sha": "fc1791f84b1195fc21df000d3300015b1ff7d1ec"
+    },
+    "nhsd-primary-care-domain-refsets-lipidtheradv_cod.csv": {
+      "id": "nhsd-primary-care-domain-refsets/lipidtheradv_cod/229b0cda",
+      "url": "https://www.opencodelists.org/codelist/nhsd-primary-care-domain-refsets/lipidtheradv_cod/229b0cda/",
+      "downloaded_at": "2025-09-25 12:22:27.340633Z",
+      "sha": "164fca8d446e2c688de5a518e94ab16b524c032e"
+    },
+    "nhsd-primary-care-domain-refsets-arstat_cod.csv": {
+      "id": "nhsd-primary-care-domain-refsets/arstat_cod/21d4594b",
+      "url": "https://www.opencodelists.org/codelist/nhsd-primary-care-domain-refsets/arstat_cod/21d4594b/",
+      "downloaded_at": "2025-09-25 12:22:27.436046Z",
+      "sha": "867c4c41631e97a0456c1b4d300add3e83c8a1fe"
+    },
+    "nhsd-primary-care-domain-refsets-aratorvastat_cod.csv": {
+      "id": "nhsd-primary-care-domain-refsets/aratorvastat_cod/023a0d52",
+      "url": "https://www.opencodelists.org/codelist/nhsd-primary-care-domain-refsets/aratorvastat_cod/023a0d52/",
+      "downloaded_at": "2025-09-25 12:22:27.529827Z",
+      "sha": "416a5b46937e545e05c8bb7fb3c0f121a8df50cf"
+    },
+    "nhsd-primary-care-domain-refsets-statall_cod.csv": {
+      "id": "nhsd-primary-care-domain-refsets/statall_cod/08c4e616",
+      "url": "https://www.opencodelists.org/codelist/nhsd-primary-care-domain-refsets/statall_cod/08c4e616/",
+      "downloaded_at": "2025-09-25 12:22:27.623074Z",
+      "sha": "e5c9b9aa87de5d491be0b33c233d01d2b4d7d154"
+    },
+    "nhsd-primary-care-domain-refsets-statintol_cod.csv": {
+      "id": "nhsd-primary-care-domain-refsets/statintol_cod/673e8db5",
+      "url": "https://www.opencodelists.org/codelist/nhsd-primary-care-domain-refsets/statintol_cod/673e8db5/",
+      "downloaded_at": "2025-09-25 12:22:27.705995Z",
+      "sha": "760282538ad0616bb3dcaf1f3c70d33a1cda03cd"
+    },
+    "nhsd-primary-care-domain-refsets-txstat_cod.csv": {
+      "id": "nhsd-primary-care-domain-refsets/txstat_cod/0d6d1b70",
+      "url": "https://www.opencodelists.org/codelist/nhsd-primary-care-domain-refsets/txstat_cod/0d6d1b70/",
+      "downloaded_at": "2025-09-25 12:22:27.806014Z",
+      "sha": "bbc7c59c9dec739101835baf76f31cdb85e05ed8"
+    },
+    "nhsd-primary-care-domain-refsets-statin-contraindications-expiring-codes.csv": {
+      "id": "nhsd-primary-care-domain-refsets/statin-contraindications-expiring-codes/6a9b3adc",
+      "url": "https://www.opencodelists.org/codelist/nhsd-primary-care-domain-refsets/statin-contraindications-expiring-codes/6a9b3adc/",
+      "downloaded_at": "2025-09-25 12:22:27.891678Z",
+      "sha": "bbc7c59c9dec739101835baf76f31cdb85e05ed8"
+    },
+    "nhsd-primary-care-domain-refsets-xstat_cod.csv": {
+      "id": "nhsd-primary-care-domain-refsets/xstat_cod/26d1caf1",
+      "url": "https://www.opencodelists.org/codelist/nhsd-primary-care-domain-refsets/xstat_cod/26d1caf1/",
+      "downloaded_at": "2025-09-25 12:22:27.966218Z",
+      "sha": "d3a2475241d31bf55a9e2eb3f3c418fde85f0f19"
+    },
+    "nhsd-primary-care-domain-refsets-statcontr_cod.csv": {
+      "id": "nhsd-primary-care-domain-refsets/statcontr_cod/7b3dbd4a",
+      "url": "https://www.opencodelists.org/codelist/nhsd-primary-care-domain-refsets/statcontr_cod/7b3dbd4a/",
+      "downloaded_at": "2025-09-25 12:22:28.052124Z",
+      "sha": "2f22ab9b71f72d94bd46dfc1649d6e84c39a25bd"
+    },
+    "nhsd-primary-care-domain-refsets-statnind_cod.csv": {
+      "id": "nhsd-primary-care-domain-refsets/statnind_cod/1ba825d0",
+      "url": "https://www.opencodelists.org/codelist/nhsd-primary-care-domain-refsets/statnind_cod/1ba825d0/",
+      "downloaded_at": "2025-09-25 12:22:28.136625Z",
+      "sha": "4855af4941fabc68a442ce668481016a4e42c706"
+    },
+    "nhsd-primary-care-domain-refsets-palcare_cod.csv": {
+      "id": "nhsd-primary-care-domain-refsets/palcare_cod/4bdaffd3",
+      "url": "https://www.opencodelists.org/codelist/nhsd-primary-care-domain-refsets/palcare_cod/4bdaffd3/",
+      "downloaded_at": "2025-09-26 09:59:51.225330Z",
+      "sha": "96f81a349e09755fe87a4bc10de9a49b4af2127a"
+    },
+    "nhsd-primary-care-domain-refsets-hstrk_cod.csv": {
+      "id": "nhsd-primary-care-domain-refsets/hstrk_cod/5d98e6b5",
+      "url": "https://www.opencodelists.org/codelist/nhsd-primary-care-domain-refsets/hstrk_cod/5d98e6b5/",
+      "downloaded_at": "2025-09-26 09:59:51.315248Z",
+      "sha": "0a1b42fcc75ca638c1838dd0a2f7f92995ac79d8"
+    },
+    "opensafely-stroke-secondary-care.csv": {
+      "id": "opensafely/stroke-secondary-care/2b8aa4a9",
+      "url": "https://www.opencodelists.org/codelist/opensafely/stroke-secondary-care/2b8aa4a9/",
+      "downloaded_at": "2025-09-26 09:59:51.397627Z",
+      "sha": "04aeb4b87dcf27651e34c287fdffe023bce38591"
+    },
+    "opensafely-condition-advanced-decompensated-cirrhosis-of-the-liver.csv": {
+      "id": "opensafely/condition-advanced-decompensated-cirrhosis-of-the-liver/071038cf",
+      "url": "https://www.opencodelists.org/codelist/opensafely/condition-advanced-decompensated-cirrhosis-of-the-liver/071038cf/",
+      "downloaded_at": "2025-09-26 09:59:51.486397Z",
+      "sha": "cc91d2287dc30a4417140d1d2960dea6eecd61dc"
+    },
+    "opensafely-condition-advanced-decompensated-cirrhosis-of-the-liver-and-associated-conditions-icd-10.csv": {
+      "id": "opensafely/condition-advanced-decompensated-cirrhosis-of-the-liver-and-associated-conditions-icd-10/00e40554",
+      "url": "https://www.opencodelists.org/codelist/opensafely/condition-advanced-decompensated-cirrhosis-of-the-liver-and-associated-conditions-icd-10/00e40554/",
+      "downloaded_at": "2025-09-26 09:59:51.580585Z",
+      "sha": "d0b25cdc87dd1916e6b9e038456d25e8c28cd811"
+    },
     "nhsd-primary-care-domain-refsets-chd_cod.csv": {
       "id": "nhsd-primary-care-domain-refsets/chd_cod/0f32f87c",
       "url": "https://www.opencodelists.org/codelist/nhsd-primary-care-domain-refsets/chd_cod/0f32f87c/",
