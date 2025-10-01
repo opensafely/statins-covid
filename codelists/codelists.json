@@ -204,6 +204,24 @@
       "downloaded_at": "2025-09-26 09:59:51.580585Z",
       "sha": "d0b25cdc87dd1916e6b9e038456d25e8c28cd811"
     },
+    "nhsd-primary-care-domain-refsets-qriskscore_cod.csv": {
+      "id": "nhsd-primary-care-domain-refsets/qriskscore_cod/16393ce7",
+      "url": "https://www.opencodelists.org/codelist/nhsd-primary-care-domain-refsets/qriskscore_cod/16393ce7/",
+      "downloaded_at": "2025-07-18 08:14:34.955742Z",
+      "sha": "1aeeb9585dbe172f387c1f41ea7b59f0ca09cb4c"
+    },
+    "ukrr-ckd-stage.csv": {
+      "id": "ukrr/ckd-stage/2df2a81e",
+      "url": "https://www.opencodelists.org/codelist/ukrr/ckd-stage/2df2a81e/",
+      "downloaded_at": "2025-10-01 14:06:31.298907Z",
+      "sha": "88cc1ab0e8fc6e4be88929369a5b492cc402884a"
+    },
+    "nhsd-primary-care-domain-refsets-fhypgen_cod.csv": {
+      "id": "nhsd-primary-care-domain-refsets/fhypgen_cod/25ac7219",
+      "url": "https://www.opencodelists.org/codelist/nhsd-primary-care-domain-refsets/fhypgen_cod/25ac7219/",
+      "downloaded_at": "2025-10-01 14:06:31.422317Z",
+      "sha": "a819f02a485282a7db34ba8dc2039da679638140"
+    },
     "nhsd-primary-care-domain-refsets-chd_cod.csv": {
       "id": "nhsd-primary-care-domain-refsets/chd_cod/0f32f87c",
       "url": "https://www.opencodelists.org/codelist/nhsd-primary-care-domain-refsets/chd_cod/0f32f87c/",
@@ -263,12 +281,6 @@
       "url": "https://www.opencodelists.org/codelist/nhsd-primary-care-domain-refsets/pad_cod/07d8032c/",
       "downloaded_at": "2025-06-27 09:38:44.947573Z",
       "sha": "f3a33d8792fcd458f728b4dbaed103e5cead9a0c"
-    },
-    "nhsd-primary-care-domain-refsets-qriskscore_cod.csv": {
-      "id": "nhsd-primary-care-domain-refsets/qriskscore_cod/16393ce7",
-      "url": "https://www.opencodelists.org/codelist/nhsd-primary-care-domain-refsets/qriskscore_cod/16393ce7/",
-      "downloaded_at": "2025-07-18 08:14:34.955742Z",
-      "sha": "1aeeb9585dbe172f387c1f41ea7b59f0ca09cb4c"
     },
     "opensafely-statin-medication.csv": {
       "id": "opensafely/statin-medication/2bf2b2ef",

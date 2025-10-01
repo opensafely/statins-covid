@@ -279,34 +279,62 @@ dataset.elig_bin_general = (
 
 ## QRISK
 # Extract latest maximum QRISK value, measured in past 5 years, from event_clinical_ranges table
-elig_num_qrisk = (
+dataset.elig_num_qrisk = (
   clinical_events_ranges.where(
     clinical_events_ranges.snomedct_code.is_in(qrisk_snomed))
     .where(clinical_events_ranges.date.is_on_or_between(index_date - months(60), index_date))
     .numeric_value.maximum_for_patient()
 )
 # Extract its associated comparator (if there is any)
-elig_str_qrisk_comparator = ( 
+dataset.elig_str_qrisk_comparator = ( 
   clinical_events_ranges.where(
     clinical_events_ranges.snomedct_code.is_in(qrisk_snomed))
     .where(clinical_events_ranges.date.is_on_or_between(index_date - months(60), index_date))
-    .where(clinical_events_ranges.numeric_value == elig_num_qrisk)
+    .where(clinical_events_ranges.numeric_value == dataset.elig_num_qrisk)
     .sort_by(clinical_events_ranges.date)
     .last_for_patient()
     .comparator
 )
+# Create binary varibale
+dataset.elig_bin_qrisk = dataset.elig_num_qrisk >= 10    # TODO: check if consideration of comparator needed
+
 
 ## type 1 diabetes
-dm_type1 = (
+dataset.elig_bin_dm_type1 = (
     (data_processed_dm_algo.cat_diabetes == "T1DM") & 
     (data_processed_dm_algo.t1dm_date <= index_date)
     )
 
 ## chronic kidney disease
+dataset.elig_bin_ckd = (
+    clinical_events.where(
+        clinical_events.snomedct_code.is_in(ckd_snomed) & 
+        clinical_events.date.is_before(index_date)
+        )
+        ).exists_for_patient() | (
+    apcs.where(
+        apcs.all_diagnoses.contains_any_of(ckd_apcs) & 
+        apcs.admission_date.is_before(index_date)
+        )
+).exists_for_patient()
 
 ## familial hypercholesterolaemia
+dataset.elig_bin_fh = (
+    clinical_events.where(
+        clinical_events.snomedct_code.is_in(fhypgen_snomed) & 
+        clinical_events.date.is_before(index_date)
+        )
+        ).exists_for_patient()
 
 ## combined: eligible for statins use for primary prevention
+dataset.elig_bin_prim_prevention = (
+    dataset.elig_bin_qrisk |
+     dataset.elig_bin_dm_type1 |
+     dataset.elig_bin_ckd |
+     dataset.elig_bin_fh
+)
+
+
 
 
 ### secondary prevention
@@ -343,7 +371,13 @@ elig_bin_pad = (
 ) 
 
 ## combined: eligible for statins use for secondary prevention
-
+elig_bin_second_prevention = (
+    elig_bin_chd |
+     elig_bin_angina |
+     elig_bin_ami |
+     elig_bin_stroke_nonhaemo |
+     elig_bin_pad
+)
 
 
 # cvd_events = (
@@ -387,8 +421,40 @@ exp_date_statin_first = first_matching_med_dmd_between(statins_dmd, index_date, 
 
 
 
+#######################################################################################
+# SUBGROUPS
+#######################################################################################
+
+## Sex
 dataset.cov_cat_sex = patients.sex
+
+## Age category
 dataset.cov_num_age = patients.age_on(index_date)
+dataset.cov_cat_age = case(
+    when((dataset.cov_num_age >= 40) & (dataset.cov_num_age < 55)).then("40-54"),
+    when((dataset.cov_num_age >= 55) & (dataset.cov_num_age < 70)).then("55-69"),
+    when((dataset.cov_num_age >= 70) & (dataset.cov_num_age < 85)).then("70-84"),
+    otherwise="out of range"
+)
+
+## Index of Multiple Deprivation (IMD)
+imd_rounded = addresses.for_patient_on(dataset.elig_date_t2dm).imd_rounded
+dataset.cov_cat_deprivation_5 = case(
+    when((imd_rounded >=0) & (imd_rounded < int(32844 * 1 / 5))).then("1 (most deprived)"),
+    when(imd_rounded < int(32844 * 2 / 5)).then("2"),
+    when(imd_rounded < int(32844 * 3 / 5)).then("3"),
+    when(imd_rounded < int(32844 * 4 / 5)).then("4"),
+    when(imd_rounded < int(32844 * 5 / 5)).then("5 (least deprived)"),
+    otherwise="Unknown"
+)
+
+## BMI
+
+## COVID-19 vaccination status
+
+## Primary vs secondary prevention
+
+
 dataset.elig_cat_dm = data_processed_dm_algo.cat_diabetes
 dataset.elig_date_t1dm = data_processed_dm_algo.t1dm_date
 # dataset.cvd = cvd_established # I think it will be important to know who has which CVD condition -> elig_bin_chd, etc.
@@ -397,8 +463,9 @@ dataset.elig_bin_angina = elig_bin_angina
 dataset.elig_bin_ami = elig_bin_ami
 dataset.elig_bin_stroke_nonhaemo = elig_bin_stroke_nonhaemo
 dataset.elig_bin_pad = elig_bin_pad
-dataset.elig_num_qrisk = elig_num_qrisk
-dataset.elig_str_qrisk_comparator = elig_str_qrisk_comparator
+dataset.elig_bin_second_prevention = elig_bin_second_prevention
+# dataset.elig_num_qrisk = dataset.elig_num_qrisk
+# dataset.elig_str_qrisk_comparator = dataset.elig_str_qrisk_comparator
 
 
 
@@ -409,7 +476,7 @@ primis_index_date = "2020-02-01"
 
 dataset.immunosuppressed = is_immunosuppressed(primis_index_date) #immunosuppress grouped
 dataset.ckd = has_ckd(primis_index_date) #chronic kidney disease
-dataset.crd = has_crd(primis_index_date) # chronis respratory disease
+dataset.crd = has_crd(primis_index_date) # chronic respratory disease
 dataset.diabetes = has_diabetes(primis_index_date) #diabetes
 dataset.cld = has_prior_event(cld, primis_index_date) # chronic liver disease
 dataset.chd = has_prior_event(chd_cov, primis_index_date) #chronic heart disease
@@ -417,7 +484,7 @@ dataset.cns = has_prior_event(cns_cov, primis_index_date) # chronic neurological
 dataset.asplenia = has_prior_event(spln_cov, primis_index_date) # asplenia or dysfunction of the Spleen
 dataset.learndis = has_prior_event(learndis, primis_index_date) # learning Disability
 dataset.smi = has_smi(primis_index_date) #severe mental illness
-dataset.severe_obesity = has_severe_obesity(primis_index_date) #immunosuppress grouped
+dataset.severe_obesity = has_severe_obesity(primis_index_date) # severe obesity
 
 dataset.primis_atrisk = primis_atrisk(primis_index_date) # at risk (at least one of the conditions above)
 

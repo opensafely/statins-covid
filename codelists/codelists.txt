@@ -61,9 +61,20 @@ nhsd-primary-care-domain-refsets/palcare_cod/4bdaffd3
 nhsd-primary-care-domain-refsets/hstrk_cod/5d98e6b5
 opensafely/stroke-secondary-care/2b8aa4a9
 
+# Active liver disease?
+
 # Decompensated cirrhosis
 opensafely/condition-advanced-decompensated-cirrhosis-of-the-liver/071038cf
 opensafely/condition-advanced-decompensated-cirrhosis-of-the-liver-and-associated-conditions-icd-10/00e40554
+
+# QRISK
+nhsd-primary-care-domain-refsets/qriskscore_cod/16393ce7
+
+# CKD
+ukrr/ckd-stage/2df2a81e
+
+# Familial hypercholesterolaemia
+nhsd-primary-care-domain-refsets/fhypgen_cod/25ac7219
 
 # CVD (statins for secondary prevention)
 nhsd-primary-care-domain-refsets/chd_cod/0f32f87c
@@ -81,7 +92,6 @@ user/RochelleKnight/stroke_isch_icd10/278d734e
 
 nhsd-primary-care-domain-refsets/pad_cod/07d8032c
 
-nhsd-primary-care-domain-refsets/qriskscore_cod/16393ce7
 
 opensafely/statin-medication/2bf2b2ef
 

@@ -97,6 +97,8 @@ hstrk_icd10 = codelist_from_csv(
     column="icd"
 )
 
+## Active liver disease?
+
 ## Decompensated cirrhosis
 decomp_liver_cirrh_snomed = codelist_from_csv(
     "codelists/opensafely-condition-advanced-decompensated-cirrhosis-of-the-liver.csv",
@@ -107,13 +109,17 @@ decomp_liver_cirrh_icd10 = codelist_from_csv(
     column="code"
 )
 
+## QRISK - but I think there are more codes than these 4, need to work on this!
+qrisk_snomed = codelist_from_csv("codelists/nhsd-primary-care-domain-refsets-qriskscore_cod.csv",column="code")
+
+## T1DM - use diabetes-algo
+
 ## Ethnicity (for diabetes-algo)
 ethnicity_codes = codelist_from_csv(
     "codelists/opensafely-ethnicity-snomed-0removed.csv",  # there is a newer version, but it does not have column snomed so would have to update this
     column="code",
     category_column="Grouping_6",
 )
-
 
 ## DIABETES (for diabetes-algo)
 # T1DM
@@ -138,6 +144,18 @@ insulin_dmd = codelist_from_csv("codelists/opensafely-insulin-medication.csv",co
 antidiabetic_drugs_snomed_clinical = codelist_from_csv("codelists/opensafely-antidiabetic-drugs.csv",column="id")
 non_metformin_dmd = codelist_from_csv("codelists/user-r_denholm-non-metformin-antidiabetic-drugs_bristol.csv",column="id")
 
+## CKD
+ckd_snomed = codelist_from_csv(
+    "codelists/ukrr-ckd-stage.csv",
+    column="code"
+)
+ckd_apcs = ["N18"]    # single code
+
+## Familial hypercholesterolaemia
+fhypgen_snomed = codelist_from_csv(
+    "codelists/nhsd-primary-care-domain-refsets-fhypgen_cod.csv",
+    column="code"
+)
 
 ## CVD
 cvd_chd_snomed = codelist_from_csv("codelists/nhsd-primary-care-domain-refsets-chd_cod.csv",column="code")
@@ -157,8 +175,7 @@ cvd_pad_snomed = codelist_from_csv("codelists/nhsd-primary-care-domain-refsets-p
 #cvd_pad_icd10 = 
 
 
-## QRISK - but I think there are more codes than these 4, need to work on this!
-qrisk_snomed = codelist_from_csv("codelists/nhsd-primary-care-domain-refsets-qriskscore_cod.csv",column="code")
+
 
 
 ## Statins - but need to double-check this codelist! 
