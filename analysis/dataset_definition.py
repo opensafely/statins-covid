@@ -438,7 +438,7 @@ dataset.cov_cat_age = case(
 )
 
 ## Index of Multiple Deprivation (IMD)
-imd_rounded = addresses.for_patient_on(dataset.elig_date_t2dm).imd_rounded
+imd_rounded = addresses.for_patient_on(index_date).imd_rounded
 dataset.cov_cat_deprivation_5 = case(
     when((imd_rounded >=0) & (imd_rounded < int(32844 * 1 / 5))).then("1 (most deprived)"),
     when(imd_rounded < int(32844 * 2 / 5)).then("2"),
