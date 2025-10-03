@@ -449,6 +449,21 @@ dataset.cov_cat_deprivation_5 = case(
 )
 
 ## BMI
+## BMI, most recent value, within previous 5 years
+bmi_measurement = most_recent_bmi(
+    where=clinical_events.date.is_after(index_date - years(5)),
+    minimum_age_at_measurement=16,
+)
+cov_num_bmi = bmi_measurement.numeric_value
+dataset.cov_num_bmi = cov_num_bmi
+dataset.cov_cat_bmi = case(
+    when(cov_num_bmi < 18.5).then("Underweight (<18.5)"),
+    when((cov_num_bmi >= 18.5) & (cov_num_bmi < 25.0)).then("Healthy weight (18.5-24.9)"),
+    when((cov_num_bmi >= 25.0) & (cov_num_bmi < 30.0)).then("Overweight (25.0-29.9)"),
+    when((cov_num_bmi >= 30.0) & (cov_num_bmi < 70.0)).then("Obese (>=30.0)"), # Set maximum to avoid any impossibly extreme values being classified as obese
+    otherwise="missing", 
+)
+
 
 ## COVID-19 vaccination status
 

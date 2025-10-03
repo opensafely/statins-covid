@@ -12,6 +12,12 @@ from ehrql.tables.tpp import (
     patients
     )
 
+# From https://github.com/alainamstutz/post-covid-metfin/blob/main/analysis/dataset_definition.py
+from ehrql.codes import CTV3Code # for BMI variable (among others)
+from ehrql.tables import tpp as schema # for BMI variable (among others) .beta or without .beta? JAB: .beta removed
+# from ehrql.tables import tpp as schema # see line above
+
+
 import codelists
 
 #######################################################################################
@@ -213,6 +219,31 @@ def last_prior_meds(codelist, index_date, where=True):
         .last_for_patient()
     )
 
+
+#######################################################################################
+# BMI
+#######################################################################################
+
+# From https://github.com/alainamstutz/post-covid-metfin/blob/main/analysis/dataset_definition.py
+# TODO: consider harmonising with PRIMIS approach below
+
+def most_recent_bmi(*, minimum_age_at_measurement, where=True):
+    clinical_events = schema.clinical_events
+    age_threshold = schema.patients.date_of_birth + days(
+        # This is obviously inexact but, given that the dates of birth are rounded to
+        # the first of the month anyway, there's no point trying to be more accurate
+        int(365.25 * minimum_age_at_measurement)
+    )
+    return (
+        # This captures just explicitly recorded BMI observations rather than attempting
+        # to calculate it from height and weight measurements. Investigation has shown
+        # this to have no real benefit it terms of coverage or accuracy.
+        clinical_events.where(clinical_events.ctv3_code == CTV3Code("22K.."))
+        .where(clinical_events.date >= age_threshold)
+        .where(where)
+        .sort_by(clinical_events.date)
+        .last_for_patient()
+    )
 
 #######################################################################################
 # PRIMIS
